@@ -21,7 +21,15 @@
 				"entryPath": "/test-resources"
 			},
 			"description": "SAPUI5 Test Resources"
-		}
+		},
+		{
+	        "path": "/VETERINARIA-NODE",
+	        "target": {
+	            "type": "destination",
+	            "name": "VETERINARIA-NODE",
+	            "entryPath": "/"
+	        }
+	    }
 	],
 	"authenticationMethod": "none",
 	"sendWelcomeFileRedirect": true

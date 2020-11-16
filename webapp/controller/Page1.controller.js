@@ -2,8 +2,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./TesteDialog",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, TesteDialog, Utilities, History) {
+	"sap/ui/core/routing/History",
+	'sap/ui/model/json/JSONModel'
+], function(BaseController, MessageBox, TesteDialog, Utilities, History, JSONModel) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.veterinaria.controller.Page1", {
@@ -65,6 +66,35 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onInit: function() {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("Page1").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+			
+			var dadosConsultas = null;
+				$.ajax({
+	                "url": "/VETERINARIA-NODE/consultas",
+	                "method": "GET",
+	                "timeout": 0,
+	                async: false,
+	                "headers": {
+	                    "Content-Type": "application/json"
+	                },
+	                success: function (oData) {
+	        			dadosConsultas = oData;
+	        			
+	                },
+	                error: function (oError) {
+		                // var sTargetPos = "";
+		                // sTargetPos = (sTargetPos === "default") ? undefined : sTargetPos;
+		                // sap.m.MessageToast.show("Erro!", {
+		                //     duration: 10000 || 10000,
+		                //     at: sTargetPos,
+		                //     my: sTargetPos
+		                // });
+	                }
+	            });
+	            var oModelConsultas = new JSONModel();
+	            oModelConsultas.setData({
+	            	consultas: dadosConsultas
+	            });
+	            this.getView().setModel(oModelConsultas, "consultas");
 
 		}
 	});
