@@ -1,0 +1,10 @@
+{
+    "dataBinding": {
+        "/webapp/view/Page1.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/TesteDialog.view.xml": {
+            "entitySet": ""
+        } 
+    }
+}
