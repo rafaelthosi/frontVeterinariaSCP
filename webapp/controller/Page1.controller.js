@@ -6,6 +6,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	'sap/ui/model/json/JSONModel'
 ], function(BaseController, MessageBox, TesteDialog, Utilities, History, JSONModel) {
 	"use strict";
+	
 
 	return BaseController.extend("com.sap.build.standard.veterinaria.controller.Page1", {
 		handleRouteMatched: function(oEvent) {
