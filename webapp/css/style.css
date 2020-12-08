@@ -1,0 +1,28 @@
+.sapMBar {
+    display: block;
+    width: 100%;
+    position: relative;
+    height: 3rem;
+    line-height: 3rem;
+    color: red !important;
+    background-color: #555 !important;
+    text-shadow: none;
+    box-shadow: inset 0 -0.0625rem #d9d9d9;
+}
+.sapMIBar-CTX .sapMTitle {
+    color: #fff;
+    text-shadow: none;
+}
+.sapMDialog>header.sapMDialogTitle .sapMTitle {
+    color: #f5faff;
+    margin: 0;
+    vertical-align: middle;
+}
+.sapMTableTH {
+    background: #FF3;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+.titleColumn {
+	color: #000 !important;
+}
